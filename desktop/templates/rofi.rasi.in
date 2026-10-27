@@ -1,0 +1,40 @@
+/* Generated from templates/rofi.rasi.in by apply.sh */
+* {
+    bg:      #@BG@f2;
+    bg-alt:  #@BG2@;
+    pink:    #@PINK@;
+    cyan:    #@CYAN@;
+    yellow:  #@YELLOW@;
+    fg:      #@TEXT@;
+    muted:   #@MUTED@;
+    font: "@FONT@ 12";
+    background-color: transparent;
+    text-color: @fg;
+}
+window {
+    width: 560px;
+    background-color: @bg;
+    border: 2px;
+    border-color: @pink;
+    padding: 18px;
+}
+mainbox { spacing: 12px; children: [inputbar, listview]; }
+inputbar {
+    padding: 8px 10px;
+    spacing: 8px;
+    border: 0 0 2px 0;
+    border-color: @cyan;
+    children: [prompt, entry];
+}
+prompt { text-color: @pink; }
+entry { placeholder: "type to search"; placeholder-color: @muted; }
+listview { lines: 8; columns: 1; spacing: 4px; scrollbar: false; }
+element { padding: 8px 10px; }
+element normal.normal, element alternate.normal { background-color: transparent; text-color: @fg; }
+element selected.normal { background-color: @pink; text-color: #@BG@; }
+element normal.urgent, element alternate.urgent { text-color: @yellow; }
+element selected.urgent { background-color: @yellow; text-color: #@BG@; }
+element normal.active, element alternate.active { text-color: @cyan; }
+element selected.active { background-color: @cyan; text-color: #@BG@; }
+element-text { background-color: inherit; text-color: inherit; }
+message { padding: 8px; border: 0 0 0 3px; border-color: @yellow; }

@@ -1,0 +1,97 @@
+; Generated from templates/polybar.ini.in by apply.sh
+[colors]
+bg = #@BG@
+bg-alt = #@BG2@
+pink = #@PINK@
+cyan = #@CYAN@
+yellow = #@YELLOW@
+text = #@TEXT@
+muted = #@MUTED@
+
+[bar/main]
+monitor = ${env:MONITOR:}
+width = 100%
+height = 30
+fixed-center = true
+background = ${colors.bg}
+foreground = ${colors.text}
+line-size = 2
+border-bottom-size = 2
+border-bottom-color = ${colors.pink}
+padding = 1
+module-margin = 1
+separator = |
+separator-foreground = ${colors.bg-alt}
+font-0 = "@FONT@:size=11;3"
+font-1 = "@FONT@:size=13;4"
+modules-left = i3 xwindow
+modules-right = pulseaudio cpu memory date tray
+cursor-click = pointer
+enable-ipc = true
+
+[bar/secondary]
+inherit = bar/main
+modules-right = date
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+show-urgent = true
+strip-wsnumbers = true
+index-sort = true
+label-focused = %index%
+label-focused-foreground = ${colors.bg}
+label-focused-background = ${colors.pink}
+label-focused-padding = 1
+label-unfocused = %index%
+label-unfocused-foreground = ${colors.muted}
+label-unfocused-padding = 1
+label-visible = %index%
+label-visible-foreground = ${colors.cyan}
+label-visible-padding = 1
+label-urgent = %index%
+label-urgent-foreground = ${colors.bg}
+label-urgent-background = ${colors.yellow}
+label-urgent-padding = 1
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:50:...%
+label-foreground = ${colors.cyan}
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = <label-volume>
+label-volume = VOL %percentage%%
+label-volume-foreground = ${colors.cyan}
+label-muted = VOL MUTE
+label-muted-foreground = ${colors.muted}
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+label = CPU %percentage%%
+label-foreground = ${colors.pink}
+
+[module/memory]
+type = internal/memory
+interval = 3
+label = RAM %percentage_used%%
+label-foreground = ${colors.yellow}
+
+[module/date]
+type = internal/date
+interval = 1
+date = %a %d %b
+time = %H:%M
+label = %date%  %time%
+label-foreground = ${colors.text}
+
+[module/tray]
+type = internal/tray
+tray-spacing = 6
+tray-size = 60%
+
+[settings]
+screenchange-reload = true
+pseudo-transparency = false

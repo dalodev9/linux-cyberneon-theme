@@ -1,0 +1,32 @@
+# Generated from templates/alacritty-colors.toml.in by apply.sh
+[colors.primary]
+background = "#@BG@"
+foreground = "#@TEXT@"
+
+[colors.cursor]
+text = "#@BG@"
+cursor = "#@PINK@"
+
+[colors.selection]
+text = "#@BG@"
+background = "#@PINK@"
+
+[colors.normal]
+black = "#@BLACK@"
+red = "#@PINK@"
+green = "#@GREEN@"
+yellow = "#@YELLOW@"
+blue = "#@BLUE@"
+magenta = "#@PURPLE@"
+cyan = "#@CYAN@"
+white = "#@TEXT@"
+
+[colors.bright]
+black = "#@MUTED@"
+red = "#@PINK@"
+green = "#@GREEN@"
+yellow = "#@YELLOW@"
+blue = "#@BLUE@"
+magenta = "#@PURPLE@"
+cyan = "#@CYAN@"
+white = "#ffffff"
